@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Web1001-TodoApp/1.0.0": {
+        "runtime": {
+          "Web1001-TodoApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Web1001-TodoApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
