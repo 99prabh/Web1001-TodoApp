@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Web1001_TodoApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Database connection string path.
+builder.Services.AddDbContext<TodoDbContext>(options =>
+    options.UseSqlite(@"Data Source=c:\Temp\mydb.db;"));
 
 var app = builder.Build();
 
@@ -22,6 +29,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Todo}/{action=Index}/{id?}");
 
 app.Run();
