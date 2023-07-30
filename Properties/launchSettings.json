@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "http": {
+    "Web1001_TodoApp": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
