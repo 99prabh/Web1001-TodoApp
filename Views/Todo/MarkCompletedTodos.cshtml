@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Web1001_TodoApp.Models.Todo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-12">
+        <h3 class="text-center">Complete Todos</h3>
+        <hr />
+        <a asp-action="create" asp-controller="todo" class="btn btn-primary">Add Todo</a>
+    </div>
+</div>
+<div class="row justify-content-center mt-3">
+    <div class="col-md-10">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr class="tableHead">
+                    <th>Title</th>
+                    <th>Details</th>
+                    <th>Complete Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="tableBody">
+                @foreach (var todo in Model)
+                {
+                    <tr>
+                        <td>@todo.Title</td>
+                        <td>@todo.Details</td>
+                        <td>
+                            @if (todo.IsComplete == false)
+                            {
+                                <span>Incomplete</span>
+                            }
+                            else
+                            {
+                                <span>Complete</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="delete" asp-controller="todo" asp-route-id="@todo.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model Web1001_TodoApp.Models.Todo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-12">
+        <h3 class="text-center">Edit Todo</h3>
+        <hr />
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <form class="row g-3" method="post" asp-action="edit" asp-controller="Todo">
+                    <div class="col-md-12">
+                        <label class="form-label" asp-for="Title">Title</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label" asp-for="Details">Details</label>
+                        <textarea class="form-control" asp-for="Details"></textarea>
+                        <span asp-validation-for="Details" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mt-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="IsComplete">
+                            <label class="form-check-label" asp-for="IsComplete">
+                                Complete
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" asp-for="CompleteDate">Complete Date</label>
+                        <input type="date" class="form-control" asp-for="CompleteDate"></input>
+                        <span asp-validation-for="CompleteDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <a class="btn btn-info" asp-action="index" asp-controller="todo">Back To List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
