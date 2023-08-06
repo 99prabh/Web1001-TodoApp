@@ -4,27 +4,34 @@
     ViewData["Title"] = "Create";
 }
 
+<!-- Page Header -->
 <div class="row">
     <div class="col-md-12 col-sm-12 col-12">
         <h3 class="text-center">Create Todo</h3>
         <hr />
     </div>
 </div>
+
+<!-- Form Section -->
 <div class="row justify-content-center">
     <div class="col-md-5">
         <div class="card">
             <div class="card-body">
+                <!-- Todo Creation Form -->
                 <form class="row g-3" method="post" asp-action="create" asp-controller="Todo">
+                    <!-- Title Input -->
                     <div class="col-md-12">
                         <label class="form-label" asp-for="Title">Title</label>
                         <input type="text" class="form-control" asp-for="Title">
                         <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
+                    <!-- Details Input -->
                     <div class="col-md-12">
                         <label class="form-label" asp-for="Details">Details</label>
                         <textarea class="form-control" asp-for="Details"></textarea>
                         <span asp-validation-for="Details" class="text-danger"></span>
                     </div>
+                    <!-- Save Button and Back Link -->
                     <div class="col-12">
                         <button type="submit" class="btn btn-success">Save</button>
                         <a class="btn btn-info" asp-action="index" asp-controller="todo">Back To List</a>

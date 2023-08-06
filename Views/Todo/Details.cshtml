@@ -4,39 +4,51 @@
     ViewData["Title"] = "Details";
 }
 
+<!-- Page Title -->
 <h1>Details</h1>
 
 <div>
+    <!-- Display Todo Details -->
     <h4>Todo</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            <!-- Display Todo Title Label -->
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <!-- Display Todo Title -->
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            <!-- Display Todo Details Label -->
             @Html.DisplayNameFor(model => model.Details)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <!-- Display Todo Details -->
             @Html.DisplayFor(model => model.Details)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            <!-- Display Todo IsComplete Label -->
             @Html.DisplayNameFor(model => model.IsComplete)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <!-- Display Todo IsComplete Status -->
             @Html.DisplayFor(model => model.IsComplete)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            <!-- Display Todo CompleteDate Label -->
             @Html.DisplayNameFor(model => model.CompleteDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <!-- Display Todo CompleteDate -->
             @Html.DisplayFor(model => model.CompleteDate)
         </dd>
     </dl>
 </div>
+
 <div>
+    <!-- Edit and Back to List Links -->
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

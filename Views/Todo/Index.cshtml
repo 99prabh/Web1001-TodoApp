@@ -4,15 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
+<!-- Page Header -->
 <div class="row">
     <div class="col-md-12 col-sm-12 col-12">
         <h3 class="text-center">Incomplete Todos</h3>
         <hr />
+        <!-- Add Todo Button -->
         <a asp-action="create" asp-controller="todo" class="btn btn-primary">Add Todo</a>
     </div>
 </div>
+
 <div class="row justify-content-center mt-3">
     <div class="col-md-10">
+        <!-- Todo Table -->
         <table class="table table-bordered text-center">
             <thead>
                 <tr class="tableHead">
@@ -23,18 +27,23 @@
                 </tr>
             </thead>
             <tbody class="tableBody">
+                <!-- Loop through each Todo in the Model -->
                 @foreach (var todo in Model)
                 {
                     <tr>
+                        <!-- Display Todo Title -->
                         <td>@todo.Title</td>
+                        <!-- Display Todo Details -->
                         <td>@todo.Details</td>
                         <td>
+                            <!-- Display Complete Status -->
                             @if (todo.IsComplete == false)
                             {
                                 <span>Incomplete</span>
                             }
                         </td>
                         <td>
+                            <!-- Edit and Delete Buttons -->
                             <a asp-action="edit" asp-controller="todo" asp-route-id="@todo.Id" class="btn btn-info">Edit</a>
                             <a asp-action="delete" asp-controller="todo" asp-route-id="@todo.Id" class="btn btn-danger">Delete</a>
                         </td>
